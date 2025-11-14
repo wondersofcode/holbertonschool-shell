@@ -12,9 +12,9 @@ then
     fi
     if [-f "$i"]
     then 
-        echo "school file is a regular file"
+        echo "school is a regular file"
     else
-        echo "school file is not a regular file"
+        echo "school is not a regular file"
     fi 
 else 
     echo "school file does not exist"
