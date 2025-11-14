@@ -1,4 +1,5 @@
-i=0
+#!/usr/bin/env bash
+#Displays "Best School" 8 times, but after 3th, prints "bad luck" and after 8th prints "good luck"i=0
 while (( i <= 10))
 do
         if (( i == 3))
