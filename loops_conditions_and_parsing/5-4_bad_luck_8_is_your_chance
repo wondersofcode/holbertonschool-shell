@@ -1,16 +1,14 @@
-#!/usr/bin/env bash
-#This script displaying "Best School" 10 times and "Hi" 1 time
 i=0
 while (( i <= 10))
 do
-	if (( i == 4))
-	then
-		echo "bad luck"
-	elif ((i == 8))
+        if (( i == 3))
         then
-		echo "good luck"
+                echo "bad luck"
+        elif ((i == 7))
+        then
+                echo "good luck"
         else 
                 echo "Best School"
-	fi
-	((i++))
+        fi
+        ((i++))
 done
