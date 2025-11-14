@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Clock
+h=0
+while (( h <= 12)); do
+	echo "Hour: $h"
+	min=1
+	while (( min <=59)); do
+		echo "$min"
+		((min++))
+	done
+	((h++))
+done
