@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
-k=0
-while ((i<10))
+#This script displaying "Best School" 10 times and "Hi" 1 time
+i=0
+while (( i <= 10))
 do
-if (k=9)
- echo "Hi"
- ((i++))
- ((k++))
-else (echo "Best School")
- ((i++))
- ((k++))
+	if (( i != 9))
+	then
+		echo "Best School"
+	else
+		echo "Hi"
+	fi
+	((i++))
 done
