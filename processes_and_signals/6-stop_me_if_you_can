@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Stopmeifyoucan
+pkill -f './4-to_infinity_and_beyond'
+sleep 1
+pkill -9 -f './4-to_infinity_and_beyond'
