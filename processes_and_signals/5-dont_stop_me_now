@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Don't stop
+proc="./4-to_infinity_and_beyond"
+kill "$(pgrep -f "$proc")"
