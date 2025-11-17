@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
-# 10-process_and_pid_file
+# Displays "To infinity and beyond" indefinitely, manages PID file and custom signals
 
-terminate_script() {
+# Cleanup function: remove PID file and exit
+cleanup() {
     sudo rm -f /var/run/myscript.pid
     exit 0
 }
 
-
-trap 'echo "I hate the kill command"; terminate_script' SIGTERM
-
+# Signal handling
 trap 'echo "Y U no love me?!"' SIGINT
+trap 'echo "I hate the kill command"; cleanup' SIGTERM
+trap cleanup SIGQUIT
 
-
-trap 'terminate_script' SIGQUIT
-
+# Create PID file
 echo $$ | sudo tee /var/run/myscript.pid > /dev/null
+
+# Infinite loop
 while true; do
- 2>/dev/null
     echo "To infinity and beyond"
     sleep 2
 done
