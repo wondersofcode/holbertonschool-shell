@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-#10-process_and_pid_file
+# 10-process_and_pid_file
 
-pid_file="/var/run/myscript.pid"
+terminate_script() {
+    sudo rm -f /var/run/myscript.pid
+    exit 0
+}
 
-# PID fayli
-echo $$ > "$pid_file"
 
-trap 'echo "I hate the kill command"; rm -f "$pid_file"; exit 0' SIGTERM
+trap 'echo "I hate the kill command"; terminate_script' SIGTERM
+
 trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -f "$pid_file"; exit 0' SIGQUIT
 
-#loop
+
+trap 'terminate_script' SIGQUIT
+
+echo $$ | sudo tee /var/run/myscript.pid > /dev/null
 while true; do
+ 2>/dev/null
     echo "To infinity and beyond"
     sleep 2
 done
